@@ -2,19 +2,19 @@ POST http://localhost:3000/reports
 content-type: application/json
 
 {
-  "make": "ferrari",
-  "model": "f12superfast",
-  "year": 2022,
-  "mileage": 1000,
-  "lng": 0,
-  "lat": 0,
-  "price": 100000
+  "make": "kia",
+  "model": "seltos",
+  "year": 2021,
+  "mileage": 12000,
+  "lng": 45,
+  "lat": 45,
+  "price": 18000
 }
 
 
 ###Approve an existing report
 
-PATCH http://localhost:3000/reports/16
+PATCH http://localhost:3000/reports/27
 content-type: application/json
 
 {
@@ -23,4 +23,4 @@ content-type: application/json
 
 
 ### Get an esitmate for an existing vehicle
-GET http://localhost:3000/reports?make=ferrari&model=f12superfast&year=2022&lng=0&lat=0&mileage=10
+GET http://localhost:3000/reports?make=kia&model=seltos&year=2022&lng=45&lat=45&mileage=10000
