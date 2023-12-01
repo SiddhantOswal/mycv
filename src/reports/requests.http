@@ -3,7 +3,7 @@ content-type: application/json
 
 {
   "make": "ferrari",
-  "model": "f12 superfast",
+  "model": "f12superfast",
   "year": 2022,
   "mileage": 1000,
   "lng": 0,
@@ -18,5 +18,9 @@ PATCH http://localhost:3000/reports/16
 content-type: application/json
 
 {
-  "approved": false
+  "approved": true
 }
+
+
+### Get an esitmate for an existing vehicle
+GET http://localhost:3000/reports?make=ferrari&model=f12superfast&year=2022&lng=0&lat=0&mileage=10
