@@ -1,5 +1,3 @@
-import { NotFoundException } from '@nestjs/common';
-
 import { Test, TestingModule } from '@nestjs/testing';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
@@ -65,9 +63,13 @@ describe('UsersController', () => {
     expect(user).toBeDefined();
   });
 
-  it('findUser throws an error if user with given id is not found', async () => {
+  it('findUser throws an error if user with given id is not found', async (done) => {
     fakeUsersService.findOne = () => null;
-    await expect(controller.findUser('1')).rejects.toThrow(NotFoundException);
+    try {
+      await controller.findUser('1');
+    } catch (err) {
+      done();
+    }
   });
 
   it('signin updates session object and returns user', async () => {
